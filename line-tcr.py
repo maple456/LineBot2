@@ -46,6 +46,7 @@ sys.setdefaultencoding('utf-8')
 helpMessage ="""Ghoul Bot(s)
 Use Prefix 「Ghoul」 to use the Bot(s)
 Prefix is Case sensitive but the commands is not.
+[Creator] - Show this Creator Bot
 [Gid] - Show Group ID
 [Mid all] - Show all the Bot(s) MID
 [Bot 1/2/3/4/5] - Shows the specific Bot MID
@@ -78,6 +79,9 @@ Prefix is Case sensitive but the commands is not.
 [Unban] - By Sharing Contact
 [Kill ban] - Kick all banned contact(s)
 [Staff add/remove @] - Add or Remove Staff By Tag
+[Lastseen/Lurker] Check to Sider
+[Steal home @] Steal Home picture
+[Steal dp @] Steal Display Picture
 """
 
 KAC=[cl,ki,kk,kc]
@@ -88,7 +92,8 @@ Cmid = kc.getProfile().mid
 Bots = [mid,Amid,Bmid,Cmid,]
 admin = ["u5aa2d0aa38b6566631c797f0334ae415","u85326fcaa03d37e33403c3281943aaef","u3a8f175f00cd198a04be74e8ea90dec5"]
 staff = ["u5aa2d0aa38b6566631c797f0334ae415","u85326fcaa03d37e33403c3281943aaef","u3a8f175f00cd198a04be74e8ea90dec5"]
-adminMID = "u5aa2d0aa38b6566631c797f0334ae415"
+adminMID = ["u5aa2d0aa38b6566631c797f0334ae415"]
+creator = ["u5aa2d0aa38b6566631c797f0334ae415"]
 wait = {
     'contact':True,
     'autoJoin':True,
@@ -125,97 +130,8 @@ cancelinvite = {
     'autoCancel':True,
     'autoCancelUrl':True
 }
-
-#bot1_name = {
-#    "1" : "[Ardh-]BOT1",
-#    "2" : "Ardh-]BOT1[",
-#    "3" : "rdh-]BOT1[A",
-#    "4" : "dh-]BOT1[Ar",
-#    "5" : "h-]BOT1[Ard",
-#    "6" : "-]BOT1[Ardh",
-#    "7" : "]BOT1[Ardh-",
-#    "8" : "BOT1[Ardh-]",
-#    "9" : "OT1[Ardh-]B",
-#    "10" : "T1[Ardh-]BO",
-#    "11" : "1[Ardh-]BOT"
-#}
-#bot2_name = {
-#    "1" : "[Ardh-]BOT2",
-#    "2" : "Ardh-]BOT2[",
-#    "3" : "rdh-]BOT2[A",
-#    "4" : "dh-]BOT2[Ar",
-#    "5" : "h-]BOT2[Ard",
-#    "6" : "-]BOT2[Ardh",
-#    "7" : "]BOT2[Ardh-",
-#    "8" : "BOT2[Ardh-]",
-#    "9" : "OT2[Ardh-]B",
-#    "10" : "T2[Ardh-]BO",
-#    "11" : "2[Ardh-]BOT"
-#}
-#bot3_name = {
-#    "1" : "[Ardh-]BOT3",
-#    "2" : "Ardh-]BOT3[",
-#    "3" : "rdh-]BOT3[A",
-#    "4" : "dh-]BOT3[Ar",
-#    "5" : "h-]BOT3[Ard",
-#    "6" : "-]BOT3[Ardh",
-#    "7" : "]BOT3[Ardh-",
-#    "8" : "BOT3[Ardh-]",
-#    "9" : "OT3[Ardh-]B",
-#    "10" : "T3[Ardh-]BO",
-#    "11" : "3[Ardh-]BOT"
-#}
-#bot4_name = {
-#    "1" : "[Ardh-]BOT4",
-#    "2" : "Ardh-]BOT4[",
-#    "3" : "rdh-]BOT4[A",
-#    "4" : "dh-]BOT4[Ar",
-#    "5" : "h-]BOT4[Ard",
-#    "6" : "-]BOT4[Ardh",
-#    "7" : "]BOT4[Ardh-",
-#    "8" : "BOT4[Ardh-]",
-#    "9" : "OT4[Ardh-]B",
-#    "10" : "T4[Ardh-]BO",
-#    "11" : "4[Ardh-]BOT"
-#}
-#bot5_name = {
-#    "1" : "[Ardh-]BOT5",
-#    "2" : "Ardh-]BOT5[",
-#    "3" : "rdh-]BOT5[A",
-#    "4" : "dh-]BOT5[Ar",
-#    "5" : "h-]BOT5[Ard",
-#    "6" : "-]BOT5[Ardh",
-#    "7" : "]BOT5[Ardh-",
-#    "8" : "BOT5[Ardh-]",
-#    "9" : "OT5[Ardh-]B",
-#    "10" : "T5[Ardh-]BO",
-#    "11" : "5[Ardh-]BOT"
-#}
-
 setTime = {}
 setTime = wait2['setTime']
-
-#def upload_tempimage(client):
-#    '''
-#        Upload a picture of a kitten. We don't ship one, so get creative!
-#    '''
-
-    # Here's the metadata for the upload. All of these are optional, including
-    # this config dict itself.
-#    config = {
-#        'album': album,
-#        'name':  'bot auto upload',
-#        'title': 'bot auto upload',
-#        'description': 'bot auto upload'
-#    }
-
-#    print("Uploading image... ")
-#    image = client.upload_from_path(image_path, config=config, anon=False)
-#    print("Done")
-#    print()
-
-#    return image
-
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
@@ -481,6 +397,11 @@ def bot(op):
                     print "[Command]/help executed"
                 else:
                     cl.sendText(msg.to,helpt)
+#-----------------------[Creator Section]------------------------             
+            elif msg.text in ["Creator"]:
+					msg.contentType = 13
+					msg.contentMetadata = {'mid': "ua7fb5762d5066629323d113e1266e8ca"}
+					cl.sendMessage(msg)
 #-----------------------[Group Name Section]------------------------
             elif "Gh gn " in msg.text:
                 if msg.toType == 2:
@@ -999,21 +920,21 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 #-----------------------[Check Sider]------------------------
-            elif msg.text == "$set":
-                    cl.sendText(msg.to, "Check sider")
-                    ki.sendText(msg.to, "Check sider")
-                    kk.sendText(msg.to, "Check sider")
-                    kc.sendText(msg.to, "Check sider")
+            elif msg.text == "Lastseen":
+                    cl.sendText(msg.to, "LastSeen On.")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
                     except:
                         pass
+                    now2 = datetime.now()
                     wait2['readPoint'][msg.to] = msg.id
                     wait2['readMember'][msg.to] = ""
                     wait2['ROM'][msg.to] = {}
+                    wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
                     print wait2
-            elif msg.text == "$read":
+
+            elif msg.text == "Lurker":
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -1023,9 +944,57 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "People who readed %s\nthat's it\n\nPeople who have ignored reads\n%sIt is abnormal ♪\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "==== Sider ==== %s\nthat's it\n\nPeople who have ignored reads\n%sTercyduk sider. ♪\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
-                        cl.sendText(msg.to, "An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")
+                        cl.sendText(msg.to, "An already read point has not been set.\n「Sider」you can send ♪ read point will be created ♪")
+#------------------------------------------------------------------	
+            elif "Steal home @" in msg.text:            
+                print "[Command]dp executing"
+                _name = msg.text.replace("Steal home @","")
+                _nametarget = _name.rstrip('  ')
+                gs = cl.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                    ki.sendText(msg.to,"Contact not found")
+                else:
+                    for target in targets:
+                        try:
+                            contact = cl.getContact(target)
+                            cu = cl.channel.getCover(target)
+                            path = str(cu)
+                            cl.sendImageWithURL(msg.to, path)
+                        except:
+                            pass
+                print "[Command]dp executed"			
+#------------------------------------------------------------------
+            elif "Steal dp @" in msg.text:            
+                print "[Command]dp executing"
+                _name = msg.text.replace("Steal dp @","")
+                _nametarget = _name.rstrip('  ')
+                gs = cl.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                    ki.sendText(msg.to,"Contact not found")
+                else:
+                    for target in targets:
+                        try:
+                            contact = cl.getContact(target)
+                            path = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                            cl.sendImageWithURL(msg.to, path)
+                        except:
+                            pass
+                print "[Command]dp executed"
+ #------------------------------------------------------------------               
+            elif msg.text in ["Welcome","wc","welcome","Wc","Wb","Kamkam","wb","kamkam"]:
+                ginfo = cl.getGroup(msg.to)
+                cl.sendText(msg.to,"Selamat Datang Di Grup " + str(ginfo.name))
+                cl.sendText(msg.to,"Owner Grup " + str(ginfo.name) + " :\n" + ginfo.creator.displayName )
 #-----------------------[Bot speed test Section]------------------------
             elif msg.text in ["Speed","speed"]:
                 if msg.from_ in staff:
@@ -1383,21 +1352,34 @@ def bot(op):
                         pass
 
 
-            elif msg.text in ["Bot Tag All", "Bot tag All"]:
-                group = cl.getGroup(msg.to)
-                msg_appended = ""
-                mem = [contact.mid for contact in group.members]                
-                for mm in mem:
-                    xname = cl.getContact(mm).displayName
-                    xlen = str(len(xname)+1)
-                    msg.contentType = 0
-                    msg.text = "@"+xname+" "
-                    msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(mm)+'}]}','EMTVER':'4'}
-                    # msg_appended += "->" +msg+ "\n"
-                    try:
-                        cl.sendMessage(msg)
-                    except Exception as error:
-                        print error        
+#-------------Fungsi Tag All Start---------------#
+            elif msg.text in ["Tagall","Tag All","Tag all"]:
+                  group = cl.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      cl.sendMessage(msg)
+                  except Exception as error:
+                      print error
+#-------------Fungsi Tag All Finish---------------#        
 
             else:
                 if cl.getGroup(msg.to).preventJoinByTicket == False:
@@ -1410,6 +1392,23 @@ def bot(op):
                         pass
                     else:
                         print "No Action"
+ #------------------------------------------------------------------------------------
+        if op.type == 55:
+            print "[NOTIFIED_READ_MESSAGE]"
+            try:
+                if op.param1 in wait2['readPoint']:
+                    Nama = cl.getContact(op.param2).displayName
+                    if Nama in wait2['readMember'][op.param1]:
+                        pass
+                    else:
+                        wait2['readMember'][op.param1] += "\n-> " + Nama
+                        wait2['ROM'][op.param1][op.param2] = "-> " + Nama
+                        wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                else:
+                    cl.sendText
+            except:
+                pass       
+        
         if op.type == 59:
             print op
 
@@ -1717,25 +1716,6 @@ def likePost():
                     pass
             else:
                 print "Not Admin or staff"
-
-# Auto Changing name
-# thread1 = threading.Thread(target=nameUpdate_Bot1)
-# thread1.daemon = True
-# thread1.start()
-# thread2 = threading.Thread(target=nameUpdate_Bot2)
-# thread2.daemon = True
-# thread2.start()
-# thread3 = threading.Thread(target=nameUpdate_Bot3)
-# thread3.daemon = True
-# thread3.start()
-# thread4 = threading.Thread(target=nameUpdate_Bot4)
-# thread4.daemon = True
-# thread4.start()
-# thread5 = threading.Thread(target=nameUpdate_Bot5)
-# thread5.daemon = True
-# thread5.start()
-# END
-
 
 while True:
     try:
