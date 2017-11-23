@@ -400,7 +400,7 @@ def bot(op):
 #-----------------------[Creator Section]------------------------             
             elif msg.text in ["Creator"]:
 					msg.contentType = 13
-					msg.contentMetadata = {'mid': "ua7fb5762d5066629323d113e1266e8ca"}
+					msg.contentMetadata = {'mid': "u5aa2d0aa38b6566631c797f0334ae415"}
 					cl.sendMessage(msg)
 #-----------------------[Group Name Section]------------------------
             elif "Gh gn " in msg.text:
