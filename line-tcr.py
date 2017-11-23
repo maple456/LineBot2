@@ -1416,289 +1416,37 @@ def bot(op):
     except Exception as error:
         print error
 
-# def nameUpdate_Bot1():
-#     while True:
-#         try:
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["1"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["2"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["3"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["4"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["5"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["6"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["7"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["8"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["9"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["10"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = cl.getProfile()
-#             profile.displayName = bot1_name["11"]
-#             cl.updateProfile(profile)
-#             time.sleep(0.5)
-#         except:
-#             pass
+def nameUpdate():
+    while True:
+        try:
+        #while a2():
+            #pass
+            if wait["clock"] == True:
+                now2 = datetime.now()
+                nowT = datetime.strftime(now2,"(%H:%M)")
+                profile = cl.getProfile()
+                profile.displayName = wait["cName"]
+                cl.updateProfile(profile)
 
-# def nameUpdate_Bot2():
-#     while True:
-#         try:
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["1"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["2"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["3"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["4"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["5"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["6"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["7"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["8"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["9"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["10"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kk.getProfile()
-#             profile.displayName = bot2_name["11"]
-#             kk.updateProfile(profile)
-#             time.sleep(0.5)
-#         except:
-#             pass
+                profile2 = ki.getProfile()
+                profile2.displayName = wait["cName2"]
+                ki.updateProfile(profile2)
 
-# def nameUpdate_Bot3():
-#     while True:
-#         try:
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["1"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["2"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["3"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["4"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["5"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["6"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["7"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["8"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["9"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["10"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = ki.getProfile()
-#             profile.displayName = bot3_name["11"]
-#             ki.updateProfile(profile)
-#             time.sleep(0.5)
-#         except:
-#             pass
-
-# def nameUpdate_Bot4():
-#     while True:
-#         try:
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["1"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["2"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["3"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["4"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["5"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["6"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["7"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["8"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["9"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["10"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kc.getProfile()
-#             profile.displayName = bot4_name["11"]
-#             kc.updateProfile(profile)
-#             time.sleep(0.5)
-#         except:
-#             pass
-
-# def nameUpdate_Bot5():
-#     while True:
-#         try:
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["1"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["2"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["3"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["4"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["5"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["6"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["7"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["8"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["9"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["10"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#             profile = kg.getProfile()
-#             profile.displayName = bot5_name["11"]
-#             kg.updateProfile(profile)
-#             time.sleep(0.5)
-#         except:
-#             pass
-
-# def nameUpdate():
-#     while True:
-#         try:
-#         #while a2():
-#             #pass
-#             if wait["clock"] == True:
-#                 now2 = datetime.now()
-#                 nowT = datetime.strftime(now2,"(%H:%M)")
-#                 profile = cl.getProfile()
-#                 profile.displayName = wait["cName"]
-#                 cl.updateProfile(profile)
-
-#                 profile2 = kk.getProfile()
-#                 profile2.displayName = wait["cName2"]
-#                 kk.updateProfile(profile2)
-
-#                 profile3 = ki.getProfile()
-#                 profile3.displayName = wait["cName3"]
-#                 ki.updateProfile(profile3)
-
-#                 profile4 = kc.getProfile()
-#                 profile4.displayName = wait["cName4"]
-#                 kc.updateProfile(profile4)
-
-#                 profile5 = kg.getProfile()
-#                 profile5.displayName = wait["cName5"]
-#                 kg.updateProfile(profile5)
-#             time.sleep(600)
-#         except:
-#             pass
-# thread2 = threading.Thread(target=nameUpdate)
-# thread2.daemon = True
-# thread2.start()
+                profile3 = kk.getProfile()
+                profile3.displayName = wait["cName3"]
+                kk.updateProfile(profile3)
+                
+                now2 = datetime.now()
+                nowT = datetime.strftime(now2,"(%H:%M)")
+                profile4 = kc.getProfile()
+                profile4.displayName = wait["cName4"] + nowT
+                kc.updateProfile(profile4)
+            time.sleep(600)
+        except:
+            pass
+thread2 = threading.Thread(target=nameUpdate)
+thread2.daemon = True
+thread2.start()
 
 def likePost():
     for zx in range(0,20):
